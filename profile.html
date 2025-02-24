@@ -8,12 +8,17 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #E6E6FA;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-image:url("login.PNG"); /* Lavender-themed background */
+            background-color: #E6E6FA;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
         .navbar {
             width: 100%;
@@ -29,6 +34,7 @@
             top: 0;
             left: 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
         .nav-links {
             display: flex;
@@ -42,13 +48,24 @@
             align-items: center;
             gap: 5px;
         }
+        .user-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .user-actions a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
         .user-icon {
             font-size: 24px;
             cursor: pointer;
         }
         .container {
-            margin-top: 80px;
-            width: 80%;
+            margin-top: 100px;
+            width: 90%;
+            max-width: 800px;
             text-align: center;
         }
         .profile-box {
@@ -63,10 +80,12 @@
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
+            border: 3px solid #6A5ACD;
         }
         .bio {
             margin: 10px 0;
             font-size: 16px;
+            color: #555;
         }
         .follow-info {
             display: flex;
@@ -74,6 +93,7 @@
             gap: 20px;
             font-size: 16px;
             font-weight: bold;
+            color: #6A5ACD;
         }
         .posts {
             margin-top: 20px;
@@ -84,6 +104,19 @@
             border-radius: 8px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
             margin: 10px 0;
+            text-align: left;
+        }
+        .post-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .post-actions button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #6A5ACD;
+            font-size: 14px;
         }
         .footer {
             width: 100%;
@@ -95,6 +128,61 @@
             bottom: 0;
             left: 0;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .user-actions {
+                margin-top: 10px;
+            }
+            .container {
+                margin-top: 150px; /* Adjusted for stacked navbar */
+            }
+            .profile-box {
+                padding: 20px;
+            }
+            .follow-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .post-actions {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                font-size: 18px;
+            }
+            .nav-links a, .user-actions a {
+                font-size: 14px;
+            }
+            .profile-pic {
+                width: 80px;
+                height: 80px;
+            }
+            .bio {
+                font-size: 14px;
+            }
+            .follow-info {
+                font-size: 14px;
+            }
+            .post {
+                padding: 10px;
+            }
+            .post-actions button {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -105,23 +193,41 @@
             <a href="#"><i class="fas fa-users"></i> Community</a>
             <a href="#"><i class="fas fa-bell"></i> Notifications</a>
         </div>
-        <i class="fas fa-user-circle user-icon"></i>
+        <div class="user-actions">
+            <a href="#"><i class="fas fa-envelope"></i> Messages</a>
+            <a href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <i class="fas fa-user-circle user-icon"></i>
+        </div>
     </nav>
 
     <div class="container">
         <div class="profile-box">
-            <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+            <img src="login.PNG" alt="Profile Picture" class="profile-pic">
             <h2>Username</h2>
-            <p class="bio">This is the user bio where they can introduce themselves.</p>
-            <div class="follow-i nfo">
+            <p class="bio">This is the user bio where they can introduce themselves. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="follow-info">
                 <span>Followers: 120</span>
                 <span>Following: 180</span>
             </div>
         </div>
         <div class="posts">
             <h3>User's Posts</h3>
-            <div class="post">This is a sample post.</div>
-            <div class="post">Another example of a post.</div>
+            <div class="post">
+                <p>This is a sample post. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="post-actions">
+                    <button><i class="fas fa-heart"></i> Like</button>
+                    <button><i class="fas fa-comment"></i> Comment</button>
+                    <button><i class="fas fa-share"></i> Share</button>
+                </div>
+            </div>
+            <div class="post">
+                <p>Another example of a post. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="post-actions">
+                    <button><i class="fas fa-heart"></i> Like</button>
+                    <button><i class="fas fa-comment"></i> Comment</button>
+                    <button><i class="fas fa-share"></i> Share</button>
+                </div>
+            </div>
         </div>
     </div>
 
