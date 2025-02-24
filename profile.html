@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - VEBIsta</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E6E6FA;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .navbar {
+            width: 100%;
+            background-color: #6A5ACD;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .user-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .container {
+            margin-top: 80px;
+            width: 80%;
+            text-align: center;
+        }
+        .profile-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .bio {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .follow-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .posts {
+            margin-top: 20px;
+        }
+        .post {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+        }
+        .footer {
+            width: 100%;
+            background-color: #6A5ACD;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>VEBIsta</div>
+        <div class="nav-links">
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-users"></i> Community</a>
+            <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+        </div>
+        <i class="fas fa-user-circle user-icon"></i>
+    </nav>
+
+    <div class="container">
+        <div class="profile-box">
+            <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+            <h2>Username</h2>
+            <p class="bio">This is the user bio where they can introduce themselves.</p>
+            <div class="follow-i nfo">
+                <span>Followers: 120</span>
+                <span>Following: 180</span>
+            </div>
+        </div>
+        <div class="posts">
+            <h3>User's Posts</h3>
+            <div class="post">This is a sample post.</div>
+            <div class="post">Another example of a post.</div>
+        </div>
+    </div>
+
+    <footer class="footer">&copy; 2025 VEBIsta. All rights reserved.</footer>
+</body>
+</html>
